@@ -1,0 +1,133 @@
+ .main {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .banner {
+    position: relative;
+    width: 40vw;
+    height: 80vh;
+    object-fit: cover;
+    border: 1x solid transparent;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .centered-image {
+    width: 40vw;
+    height: 80vh;
+    object-fit: cover;
+    border: 1x solid transparent;
+    border-radius: 15px;
+  }
+
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  
+
+  .title{
+    width: 50vw;
+    height: 80vh;
+    border: 1x solid transparent;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+  }
+  
+  
+  .title span{
+    
+    border: 1x solid transparent;
+    font-size: 3.4rem;
+    font-weight: bold;
+    border-radius: 15px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    
+    .main {
+      padding: 20px;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .banner {
+      width: 80vw;  
+      height: auto;  
+      border-radius: 10px;  
+    }
+  
+    .centered-image {
+      width: 80vw;  
+      height: auto;  
+    }
+  
+    .title {
+      width: 80vw;  
+      text-align: center;
+      padding: 20px;
+    }
+  
+    .title span {
+      font-size: 2.4rem;  
+    }
+  
+    .title h2 {
+      font-size: 1.8rem;  
+    }
+  
+    .title p {
+      font-size: 1rem;  
+      line-height: 1.6;  
+    }
+  }  
+  @media (max-width: 480px) {
+    .main {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;  
+    }
+  
+    .banner {
+      width: 90vw;  
+      height: auto;  
+      margin-bottom: 10px;  
+    }
+  
+    .centered-image {
+      width: 90vw;  
+      height: auto;  
+    }
+  
+    .title {
+      width: 90vw;  
+      height: auto;  
+      padding: 10px;  
+      text-align: center;
+    }
+  
+    .title span {
+      font-size: 1.8rem;  
+    }
+  
+    .title h2 {
+      font-size: 1.2rem; 
+    }
+  
+    .title p {
+      font-size: 0.8rem;  
+      line-height: 1.4;  
+    }
+  }
+  
