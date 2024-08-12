@@ -2,6 +2,7 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    margin: 20px;
   }
   
   .banner {
@@ -53,6 +54,17 @@
     border-radius: 15px;
   }
 
+  .store{
+    text-decoration: none;
+    border: 1px solid transparent;
+    background-color: black;
+    padding: 15px;
+    width: 100px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+  }
+
   @media (min-width: 768px) and (max-width: 1024px) {
     
     
@@ -77,6 +89,9 @@
       width: 80vw;  
       text-align: center;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   
     .title span {
@@ -91,6 +106,8 @@
       font-size: 1rem;  
       line-height: 1.6;  
     }
+     
+    
   }  
   @media (max-width: 480px) {
     .main {
@@ -115,6 +132,9 @@
       height: auto;  
       padding: 10px;  
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   
     .title span {
@@ -129,5 +149,6 @@
       font-size: 0.8rem;  
       line-height: 1.4;  
     }
+    
   }
   

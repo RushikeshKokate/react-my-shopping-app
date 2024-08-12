@@ -1,0 +1,69 @@
+/* Footer.css */
+.footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+    color: #333;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  .footer-content div {
+    flex: 1;
+    margin: 10px;
+  }
+  
+  .footer-content h3 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+  }
+  
+  .footer-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-content ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-content ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .footer-content .newsletter form {
+    display: flex;
+  }
+  
+  .footer-content .newsletter input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    flex: 1;
+  }
+  
+  .footer-content .newsletter button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 0 4px 4px 0;
+    background-color: #333;
+    color: white;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background-color: #ddd;
+    margin-top: 20px;
+  }
+  
+  .payment-methods img {
+    max-width: 200px;
+  }
+  
