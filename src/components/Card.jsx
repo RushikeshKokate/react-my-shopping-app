@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Card.css'; // Import the CSS file
+import './Card.css'; 
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../feature/martSlice';
 

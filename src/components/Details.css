@@ -1,9 +1,9 @@
+ 
 .details {
     height: 80vh;
     width: 90vw;
     display: flex;
     align-items: start;
-   
     background-color: #f8f9fa;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -43,15 +43,15 @@
 
 .color-box {
     display: flex;
-    flex-wrap: wrap; /* Wrap colors to next line if needed */
-    gap: 10px; /* Spacing between colors */
+    flex-wrap: wrap;
+    gap: 10px;
     align-items: center;
 }
 
 .quantity-control {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between buttons and count */
+    gap: 10px;
 }
 
 .quantity-control button {
@@ -63,7 +63,7 @@
 .add-button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #007bff; /* Bootstrap primary color */
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -71,10 +71,45 @@
 }
 
 .add-button:hover {
-    background-color: #0056b3; /* Darker shade for hover */
+    background-color: #0056b3;
 }
 
 .item-description {
     margin-top: 10px;
     color: #666;
+}
+
+ 
+@media (max-width: 768px) {
+    .details {
+        flex-direction: column;
+        height: auto;  
+        width: 95vw;
+        padding: 10px;
+    }
+
+    .imgdiv {
+        max-width: 100%;
+        margin: 10px auto;  
+    }
+
+    .color-box {
+        justify-content: start;  
+        gap: 5px; 
+    }
+
+    .quantity-control {
+        gap: 5px;  
+    }
+
+    .add-button {
+        width: 100%;
+        padding: 15px 0;  
+        font-size: 18px;
+    }
+
+    .item-description {
+        margin-top: 15px;
+        font-size: 14px;  
+    }
 }

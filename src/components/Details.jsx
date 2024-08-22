@@ -16,6 +16,7 @@ const Details = () => {
     console.log("here is shirt ", shirt);
     
     const itemToAdd = { ...shirt, quantity: count, color: color , size: isSize};
+    alert("successfully added to cart, check the cart")
     dispatch(addToCart(itemToAdd)); 
   };
 

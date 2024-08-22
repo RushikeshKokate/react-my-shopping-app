@@ -44,7 +44,9 @@ export const martSlice =  createSlice({
             quantity: action.payload.quantity,
             description: action.payload.description,
             size: action.payload.size
+    
           }
+         
           state.Carts.push(newItem)
           
          
@@ -58,6 +60,7 @@ export const martSlice =  createSlice({
         )
         }
     }
+    
 })
 
 export const {addToCart, removeFromCart, addData, addToDetails} = martSlice.actions;

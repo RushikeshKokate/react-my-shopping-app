@@ -3,6 +3,6 @@ import MartReducer from '../feature/martSlice'
 
 export const store = configureStore({
     reducer: {
-        Cart:  MartReducer, // Add your reducers here
+        Cart:  MartReducer, 
       },
 })
