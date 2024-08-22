@@ -1,0 +1,80 @@
+.details {
+    height: 80vh;
+    width: 90vw;
+    display: flex;
+    align-items: start;
+   
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.imgdiv {
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    margin: 30px;
+    overflow: hidden;
+}
+
+.img-tag {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.color {
+    height: 30px;
+    width: 30px;
+    border: 1px solid #ddd;
+    border-radius: 60%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 5px;  
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-box {
+    display: flex;
+    flex-wrap: wrap; /* Wrap colors to next line if needed */
+    gap: 10px; /* Spacing between colors */
+    align-items: center;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between buttons and count */
+}
+
+.quantity-control button {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.add-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+}
+
+.item-description {
+    margin-top: 10px;
+    color: #666;
+}

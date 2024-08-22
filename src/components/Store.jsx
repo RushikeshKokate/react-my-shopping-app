@@ -1,80 +1,94 @@
-import React from 'react'
-import Card from './Card'
-import './Store.css'
+import React, { useEffect } from 'react';
+import Card from './Card';
+import './Store.css';
+import { addData, addToDetails } from '../feature/martSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const shirts = [
   {
       id: 1,
       name: "Classic White Shirt",
-      price: 29.99,
-      currency: "USD",
+      price: 299,
+      currency: "INR",
       quantity: 5,
       description: "A classic white shirt made of 100% cotton, perfect for formal and casual wear.",
-      size: "M",
-      color: "White",
-      imageUrl: "https://example.com/image-of-white-shirt.jpg",
+      size: ["S","M","L","XL", "XXL"],
+      color: ["White", "Red", "Green"],
+      imageUrl1: [
+          "banner4.jpg"
+      ],
       inStock: true
   },
   {
       id: 2,
       name: "Slim Fit Denim Shirt",
-      price: 39.99,
-      currency: "USD",
+      price: 399,
+      currency: "INR",
       quantity: 8,
       description: "A stylish denim shirt with a slim fit, great for casual outings.",
-      size: "L",
-      color: "Blue",
-      imageUrl: "https://example.com/image-of-denim-shirt.jpg",
+      size: ["S","M","L","XL", "XXL"],
+      color: ["Black", "White", "Gray", "Red"],
+      imageUrl1: ["banner3.jpg"],
       inStock: true
   },
   {
       id: 3,
       name: "Plaid Flannel Shirt",
-      price: 24.99,
-      currency: "USD",
+      price: 249,
+      currency: "INR",
       quantity: 12,
       description: "A warm flannel shirt with a classic plaid pattern, ideal for chilly days.",
-      size: "XL",
-      color: "Red",
-      imageUrl: "https://example.com/image-of-plaid-shirt.jpg",
+      size: ["S","M","L","XL", "XXL"],
+      color: ["Beige", "Light Blue", "Mint Green", "Coral"],
+      imageUrl1: ["item1.jpg"],
       inStock: true
   },
   {
       id: 4,
       name: "Linen Casual Shirt",
-      price: 34.99,
-      currency: "USD",
+      price: 349,
+      currency: "INR",
       quantity: 10,
       description: "A breathable linen shirt that is perfect for warm weather.",
-      size: "M",
-      color: "Beige",
-      imageUrl: "https://example.com/image-of-linen-shirt.jpg",
+      size: ["S","M","L","XL", "XXL"],
+      color: ["Red", "Green", "Navy", "Brown"],
+      imageUrl1: [" item2.jpg"],
       inStock: false
   },
   {
       id: 5,
       name: "Graphic Tee",
-      price: 19.99,
-      currency: "USD",
+      price: 199,
+      currency: "INR",
       quantity: 20,
       description: "A cool graphic tee featuring a modern design, suitable for everyday wear.",
-      size: "S",
-      color: "Black",
-      imageUrl: "https://example.com/image-of-graphic-tee.jpg",
+      size: ["S","M","L","XL", "XXL"],
+      color: ["Black", "White", "Gray", "Red"],
+      imageUrl1: ["item3.jpg"],
       inStock: true
   }
 ];
 
-
 const Store = () => {
-  return (
-    <div className='main_div'> 
-      {shirts.map((items)=>
-      <Card items={items}/>
-      )}
-      
-    </div>
-  )
-}
+  const dispatch = useDispatch();
+ const navigate = useNavigate()
+  useEffect(() => {
+    dispatch(addData(shirts));
+  }, [dispatch]);
 
-export default Store
+  const handleClick = (shirt) =>{
+    navigate('/Details', {state:{shirt:shirt}})
+
+  }
+
+  return (
+    <div className='main_div' >
+      {shirts.map((shirt) => (
+        <Card key={shirt.id} shirt={shirt} handleClick={ handleClick}/>
+      ))}
+    </div>
+  );
+};
+
+export default Store;
