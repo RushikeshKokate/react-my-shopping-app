@@ -13,10 +13,6 @@ export const martSlice =  createSlice({
           state.Carts.push(action.payload)
         },
 
-        addItems:(state, action)=>{
-           
-        },
-
         addToCart:(state, action)=>{
           const newItem = {
             id : nanoid(),
@@ -25,7 +21,8 @@ export const martSlice =  createSlice({
             color: action.payload.color,
             price: action.payload.price,
             quantity: action.payload.quantity,
-            description: action.payload.description
+            description: action.payload.description,
+            count: action.payload.count
           }
           console.log('here',action.payload);
           

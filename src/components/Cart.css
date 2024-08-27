@@ -88,7 +88,10 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
+.gray{
+  font-size: 14px;
+  color: rgb(194, 193, 193);
+}
  
 @media (max-width: 768px) {
   .card1 {
@@ -133,12 +136,15 @@
       font-size: 14px;
       margin-top: 8px;
       width: 100%;
+      text-decoration: none;
+      color: white;
   }
 
   .apply-coupon {
       font-size: 12px;
       text-align: start;
       margin-top: 10px;
+      color: green;
   }
 
   .apply-coupon-input {

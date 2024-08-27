@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './Details.css';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../feature/martSlice';
+ 
 
 const Details = () => {
   const [color, setColor] = useState("");
@@ -11,14 +12,23 @@ const Details = () => {
   const [count, setCount] = useState(0);
   const dispatch = useDispatch();
   const [isSize, setIsSize] = useState("")
+  const [cartItemCount, setCartItemCount] = useState(0)
+
+ 
+
 
   const handleAdd = (shirt) => {
     console.log("here is shirt ", shirt);
-    
     const itemToAdd = { ...shirt, quantity: count, color: color , size: isSize};
-    alert("successfully added to cart, check the cart")
+     
+    
     dispatch(addToCart(itemToAdd)); 
+ 
+    
   };
+
+
+ 
 
   const addItem = (item) => {
     if (count < item) {
@@ -55,7 +65,7 @@ const Details = () => {
       </div>
       <div>
         <h1>{shirt.name}</h1>
-        <h2>Price: ${shirt.price}</h2> 
+        <h2>Price: {shirt.price} Rs</h2> 
         <h3>Quantity: {shirt.quantity}</h3> 
         <div className="quantity-control">
           <button onClick={() => addItem(shirt.quantity)}>+</button>

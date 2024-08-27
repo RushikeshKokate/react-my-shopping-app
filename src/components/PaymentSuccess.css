@@ -1,0 +1,79 @@
+.success-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:80vh;
+    background-color: #f0f4f8;
+    text-align: center;
+  }
+  
+  .animation-box {
+    margin-bottom: 20px;
+  }
+  
+  .checkmark-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #4caf50;
+    position: relative;
+    animation: scaleUp 0.5s ease-in-out;
+  }
+  
+  .background {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #4caf50;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .checkmark {
+    width: 25px; /* Slightly reduce width */
+    height: 50px; /* Slightly reduce height */
+    border-radius: 5px;
+    border-bottom: 6px solid white; /* Adjust thickness */
+    border-right: 6px solid white; /* Adjust thickness */
+    transform: rotate(45deg); /* 45 degrees should create a proper checkmark */
+    position: absolute;
+    top: 25px; /* Adjusted position */
+    left: 35px; /* Adjusted position */
+    animation: drawCheckmark 0.5s ease-in-out 0.5s forwards;
+    opacity: 0;
+  }
+  
+  @keyframes scaleUp {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes drawCheckmark {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .success-message {
+    margin-bottom: 20px;
+    color: #4caf50;
+  }
+  
+  .home-button {
+    background-color: #4caf50;
+    color: white;
+  }
+  

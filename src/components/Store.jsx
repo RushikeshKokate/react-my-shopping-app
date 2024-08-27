@@ -18,7 +18,8 @@ const shirts = [
       imageUrl1: [
           "banner4.jpg"
       ],
-      inStock: true
+      inStock: true,
+      count: 0
   },
   {
       id: 2,
@@ -30,7 +31,8 @@ const shirts = [
       size: ["S","M","L","XL", "XXL"],
       color: ["Black", "White", "Gray", "Red"],
       imageUrl1: ["banner3.jpg"],
-      inStock: true
+      inStock: true,
+      count: 0
   },
   {
       id: 3,
@@ -42,7 +44,8 @@ const shirts = [
       size: ["S","M","L","XL", "XXL"],
       color: ["Beige", "Light Blue", "Mint Green", "Coral"],
       imageUrl1: ["item1.jpg"],
-      inStock: true
+      inStock: true,
+      count: 0
   },
   {
       id: 4,
@@ -54,7 +57,8 @@ const shirts = [
       size: ["S","M","L","XL", "XXL"],
       color: ["Red", "Green", "Navy", "Brown"],
       imageUrl1: [" item2.jpg"],
-      inStock: false
+      inStock: false,
+      count: 0
   },
   {
       id: 5,
@@ -66,7 +70,8 @@ const shirts = [
       size: ["S","M","L","XL", "XXL"],
       color: ["Black", "White", "Gray", "Red"],
       imageUrl1: ["item3.jpg"],
-      inStock: true
+      inStock: true,
+      count: 0
   }
 ];
 

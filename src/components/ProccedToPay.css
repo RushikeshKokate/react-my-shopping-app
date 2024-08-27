@@ -1,0 +1,65 @@
+/* ProccedToPay.css */
+
+/* General styling for the payment page */
+.payment-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+  }
+  
+  /* Styling for the total amount heading */
+  .payment-page h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the Paper container */
+  .payment-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title styling */
+  .payment-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Divider styling */
+  .divider {
+    margin: 20px 0;
+  }
+  
+  /* Styling for the RadioGroup container */
+  .payment-options {
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for each payment option */
+  .payment-options .MuiFormControlLabel-root {
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the icons next to payment options */
+  .payment-icon {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #1976d2;
+  }
+  
+  /* Styling for the Proceed to Pay button */
+  .pay-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
