@@ -1,5 +1,5 @@
  
-.card {
+.cardh {
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     padding: 20px;
@@ -11,7 +11,7 @@
     text-align: center;
 }
 
-.card:hover {
+.cardh:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
@@ -42,11 +42,12 @@
     margin-bottom: 10px;
 }
 
-.item-price {
+.item-price1 {
     font-size: 18px;
     color: #e91e63;
     font-weight: 600;
     margin-bottom: 8px;
+    
 }
 
 .item-quantity {

@@ -1,5 +1,28 @@
-.main_div{
+.main_div {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .userName {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .userName h2 {
+    font-size: 2rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+  }
+  
+  .Cards-div {
     display: flex;
     flex-wrap: wrap;
+    width: 100vw;
+    gap: 20px;
     justify-content: center;
-}
+  }

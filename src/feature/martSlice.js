@@ -55,11 +55,13 @@ export const martSlice =  createSlice({
             return item.id !== action.payload
            }
         )
-        }
+        },
+
+         
     }
     
 })
 
-export const {addToCart, removeFromCart, addData, addToDetails} = martSlice.actions;
+export const {addToCart, removeFromCart, addData, addToDetails,  } = martSlice.actions;
 
 export default martSlice.reducer

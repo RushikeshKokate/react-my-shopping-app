@@ -1,13 +1,43 @@
 import React, { useState } from 'react'
 import './Navbar.css'
-import { Link } from 'react-router-dom'
-import {  LoginOutlined ,UserOutlined, MenuOutlined, ShoppingCartOutlined} from '@ant-design/icons';
+import { Link, useNavigate } from 'react-router-dom'
+import {  LoginOutlined ,UserOutlined, MenuOutlined, ShoppingCartOutlined,LogoutOutlined} from '@ant-design/icons';
 import { useSelector } from 'react-redux';
-const Navbar = () => {
+import { signOut } from 'firebase/auth';
+import {auth} from '../firebase'
+
+const Navbar = ({user,  onData}) => {
   const [open, setOpen] = useState(false)
+  const [data, setData] = useState("")
  
   const Carts = useSelector((state)=>state.Cart.Carts);
- 
+  const navigate = useNavigate()
+  
+  const navToLogin = ()=>{
+    navigate('/Signup')
+  }
+
+ const sendDataToParent = (e) =>{
+  setData(e.target.value)
+  onData(data)
+ }
+
+  const handleSignOut = async () => {
+    
+    try {
+      await signOut(auth);
+      alert('Do you want to logout')
+      alert('logout successfully !')
+      navigate('/Store');  
+     
+    } catch (error) {
+      console.error('Sign out error:', error);
+    }
+  };
+  
+  const gotoProfile = () =>{
+    navigate('/Profile')
+  }
   
   return (
     <div >
@@ -15,11 +45,15 @@ const Navbar = () => {
   <Link className='nav-link' to='/' style={{ border: "3px solid black", padding: "2px" }}>
     MART
   </Link>
-  <Link to='/store' className='nav-link'>
+  <Link to='/Store' className='nav-link'>
     Store
   </Link>
   <div className='right-div'>
-    <input type="text" className='input' placeholder='search here ...' />
+    <input type="text" 
+    className='input' 
+    placeholder='search here ...' 
+    value={data}
+    onChange={(e)=>sendDataToParent(e)}/>
     
  
    
@@ -27,15 +61,22 @@ const Navbar = () => {
   <ShoppingCartOutlined style={{ fontSize: '35px', cursor: "pointer" }} />
   {Carts.length > 0 && (
     <span className='cart-count'>
-      {/* Display the number of items that have a name and quantity > 0 */}
+  
       {Carts.filter(item => item.name && item.quantity > 0).length}
     </span>
   )}
 </Link>
   
-    
-    <LoginOutlined style={{ fontSize: '28px', cursor: "pointer" }} />
-    <UserOutlined style={{ fontSize: '28px', cursor: "pointer" }} />
+    {user ? (
+      <LogoutOutlined 
+      style={{ fontSize: '28px', cursor: "pointer" }} 
+      onClick={handleSignOut}/>
+    ):(
+       <LoginOutlined 
+       style={{ fontSize: '28px', cursor: "pointer" }} 
+       onClick={navToLogin}/>)}
+   
+    <UserOutlined style={{ fontSize: '28px', cursor: "pointer" }} onClick={gotoProfile}/>
   </div>
 </div>
 
@@ -56,10 +97,16 @@ const Navbar = () => {
                Home
             </Link>
            <Link 
-           to='/store'
+           to='/Store'
               className='nav-link link' 
                 onClick={()=>{setOpen(!open)}}>
               Store
+            </Link>
+            <Link 
+           to='/Wishlist'
+              className='nav-link link' 
+                onClick={()=>{setOpen(!open)}}>
+              Wishlist
             </Link>
            <Link 
             to='/Cart' 
@@ -67,14 +114,21 @@ const Navbar = () => {
                 onClick={()=>{setOpen(!open)}}>
               Cart
             </Link>
-           <LoginOutlined 
-             className='link' 
-              style={{ fontSize: '28px', cursor:"pointer"}} 
-              onClick={()=>{setOpen(!open)}}/>
-          <UserOutlined 
-             className='link' 
-              style={{ fontSize: '28px', cursor:"pointer"}} 
-              onClick={()=>{setOpen(!open)}}/>
+            {user ? (<Link 
+           to='/Signout' 
+           className='nav-link link' 
+           onClick={handleSignOut} >  
+             Sign out 
+             </Link>):
+             (<Link to='/Login' className='nav-link link' 
+             onClick={()=>{setOpen(!open)}}>
+             Sign In
+             </Link>)}
+              <Link to='/Profile'
+               className='nav-link link'   
+               onClick={()=>{setOpen(!open)}}>
+                Profile
+            </Link>
             <span className='nav-link link'  onClick={()=>{setOpen(!open)}}>Close</span>
         </div>
         }

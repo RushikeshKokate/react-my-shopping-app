@@ -9,6 +9,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   max-width: 90vw;
+  gap: 20px;
 }
 
 .img-div1 {

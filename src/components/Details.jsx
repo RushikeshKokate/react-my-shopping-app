@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './Details.css';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../feature/martSlice';
+import { addToCart, addToWishlist } from '../feature/martSlice';
+import { addToWish  } from '../feature/wishlistSlice';
  
 
 const Details = () => {
@@ -56,7 +57,10 @@ const Details = () => {
     return <div>No details available.</div>;  
   }
  
-  
+  const handleWishlist=(shirt)=>{
+    const itemToAdd = { ...shirt, quantity: count, color: color , size: isSize};
+    dispatch(addToWish(itemToAdd)); 
+  }
 
   return (
     <div className="details">  
@@ -65,6 +69,16 @@ const Details = () => {
       </div>
       <div>
         <h1>{shirt.name}</h1>
+
+        <button  
+        style={{display: "flex", alignItems: 'center', gap:'10px'}}
+         onClick={()=>handleWishlist(shirt)}>
+          <img src="./wishlist-star.svg" 
+          alt="wishlist"  
+          style={{height:"20px", width:"20px"}}/> 
+          Add to Wishlist
+          </button>
+
         <h2>Price: {shirt.price} Rs</h2> 
         <h3>Quantity: {shirt.quantity}</h3> 
         <div className="quantity-control">

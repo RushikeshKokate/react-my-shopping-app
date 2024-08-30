@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './Cart.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeFromCart } from '../feature/martSlice'
+import { addToCart, removeFromCart } from '../feature/martSlice'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
  
 
 
-const Cart = () => {
+const Cart = ({user}) => {
     const dispatch = useDispatch()
     const Carts = useSelector((state)=>state.Cart.Carts);
     const [open, setOpen] = useState(false)
@@ -17,6 +17,7 @@ const Cart = () => {
     const [applied, setApplied] = useState(0)
     const [deliveryCharge, setDeliveryCharge] = useState(60)
     const [trigger, setTrigger] = useState()  
+    const [resetCart, setResetCart] = useState([])
 
  
     
@@ -43,8 +44,16 @@ const Cart = () => {
    
     const paypath=()=>{
       const dataToPass = applied ? applied : finalPrice;
-  
-      navigate('/ProccedToPay', { state: { price: dataToPass } });
+       setResetCart([])
+       if(user){
+        navigate('/ProccedToPay', { state: { price: dataToPass } });
+      dispatch(addToCart(resetCart))
+       }
+      else{
+        alert('please Login')
+         navigate('/Login')
+         
+      }
     }
  
     
@@ -100,6 +109,7 @@ const Cart = () => {
                     <h4>Price : {finalPrice} Rs</h4>
                     <h4 style={{ color: applied ? 'green' : 'black' }}>{applied ? "Discounted Price":" Final Price"} : {applied  ? applied: finalPrice} Rs</h4>
                     <h5 className={applied ? 'gray' : 'apply-coupon'}   onClick={()=>setOpen(!open)}>Apply Coupon to get 10% off</h5>
+                    <h5>Coupen Code: Rushi10</h5>
                     <h5>Delivery : {finalPrice > 500 ? "Free Delivery" : "60 Delivery Charges"} </h5>
                     {open &&
                     <>
