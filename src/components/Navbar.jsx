@@ -85,6 +85,15 @@ const Navbar = ({user,  onData}) => {
      
   <div className='small-nav'>
       <Link className='nav-link' style={{border:"3px solid black", padding: "2px,"}}>MART </Link>
+      <Link to='/Cart' className='Cart-link'>
+  <ShoppingCartOutlined style={{ fontSize: '35px', cursor: "pointer" }} />
+  {Carts.length > 0 && (
+    <span className='cart-count'>
+  
+      {Carts.filter(item => item.name && item.quantity > 0).length}
+    </span>
+  )}
+</Link>
       <div className='menu-box'>
       <MenuOutlined style={{ fontSize: '28px', cursor:"pointer"}} onClick={()=>{setOpen(!open)}}/>
     </div>
@@ -107,12 +116,6 @@ const Navbar = ({user,  onData}) => {
               className='nav-link link' 
                 onClick={()=>{setOpen(!open)}}>
               Wishlist
-            </Link>
-           <Link 
-            to='/Cart' 
-                className='nav-link link' 
-                onClick={()=>{setOpen(!open)}}>
-              Cart
             </Link>
             {user ? (<Link 
            to='/Signout' 

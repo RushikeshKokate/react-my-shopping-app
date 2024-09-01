@@ -42,7 +42,9 @@ function App() {
 
   return (
     <div>
+      <div className='Navbar'>
       <Navbar user={user} onData={handleDataFromChild}/>
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Store" element={<Store user={user}  childData={childData} />} />

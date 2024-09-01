@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { auth } from '../firebase'; // Adjust the path if needed
+import { auth } from '../firebase';  
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { Link, useNavigate } from 'react-router-dom'; // For navigation after signup
+import { Link, useNavigate } from 'react-router-dom';  
 import './Signup.css'
 
 

@@ -24,7 +24,7 @@ const Details = () => {
      
     
     dispatch(addToCart(itemToAdd)); 
- 
+    alert("succesfully added to cart")
     
   };
 
