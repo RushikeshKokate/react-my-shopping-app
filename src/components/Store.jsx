@@ -6,6 +6,8 @@ import { addData, addToDetails } from '../feature/martSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addToWish } from '../feature/wishlistSlice';
+import Filter from './Filter';
+import { IoFilterSharp } from "react-icons/io5";
 
 const shirts = [
   {
@@ -158,10 +160,43 @@ const Store = ({user, childData}) => {
   const dispatch = useDispatch();
  const navigate = useNavigate()
  const [filteredShirts, setFilteredShirts] = useState(shirts);
+ const [Open, setOpen] = useState(false);
 
   useEffect(() => {
     dispatch(addData(shirts));
   }, [dispatch]);
+
+  
+  let filtered1 = [];
+  const handleFilter = (priceFilter) => {
+console.log('in store',priceFilter);
+
+  if(priceFilter.length > 0){
+
+   
+    for (let i = 0; i < priceFilter.length; i++) {
+ 
+      for (let j = 0; j < shirts.length; j++) {
+        
+        if (shirts[j].price <= priceFilter[i]) {
+           if (filtered1.includes(shirts[j])) {
+            continue;
+          }
+          
+          filtered1.push(shirts[j]);
+        }
+        
+      }
+    }
+  
+    // Update the filteredShirts state with the accumulated results
+    setFilteredShirts(filtered1);
+  }
+  else{
+    setFilteredShirts(shirts)
+  }
+  };
+  
 
  
 
@@ -208,6 +243,15 @@ const Store = ({user, childData}) => {
       <div className='userName'>
       {user ? (<h3>Welcome, {displayName} !</h3>):(<h2></h2>)}
       </div>
+      <div className="store_filter">
+  <div className="filter_div">
+    <IoFilterSharp className="filter_icon" onClick={() => setOpen(!Open)} />
+    {Open && <Filter handleFilter={handleFilter} />}
+  </div>
+
+ 
+</div>
+
       <div className='Cards-div'>
       {filteredShirts.map((shirt) => (
         <Card key={shirt.id} shirt={shirt} handleClick={ handleClick}/>

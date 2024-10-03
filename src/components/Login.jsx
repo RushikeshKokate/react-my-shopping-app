@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
@@ -19,7 +19,10 @@ const Login = () => {
             [name]: value
         });
     };
-
+     
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    },[])
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { email, password } = data;

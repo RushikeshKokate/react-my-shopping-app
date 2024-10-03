@@ -1,0 +1,109 @@
+/* Filter.css */
+
+/* General styles */
+.form1 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .form1:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    border-color: #007bff;
+  }
+  
+  .price_filter_input {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .price_filter_label {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+  
+  .price_filter_label:hover {
+    color: #007bff;
+  }
+  
+  .buttonq {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px;
+  }
+  
+  .buttonq:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  .buttonq:active {
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 600px) {
+    .form1 {
+      max-width: 100%;
+      padding: 20px;
+    }
+  
+    .price_filter_label {
+      font-size: 1rem;
+    }
+  
+    .buttonq {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 900px) {
+    .form1 {
+      max-width: 90%;
+      padding: 15px;
+    }
+  
+    .price_filter_label {
+      font-size: 1rem;
+    }
+  
+    .buttonq {
+      font-size: 1.05rem;
+      padding: 12px;
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .form1 {
+      max-width: 400px;
+    }
+  
+    .price_filter_label {
+      font-size: 1.2rem;
+    }
+  
+    .buttonq {
+      font-size: 1.2rem;
+      padding: 14px;
+    }
+  }
+  

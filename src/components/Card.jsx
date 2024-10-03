@@ -25,13 +25,13 @@ const Card = ({ shirt , handleClick}) => {
     // };
 
     return (
-        <div className="cardh" onClick={()=>handleClick(shirt)}>
+        <div className="cardh1" onClick={()=>handleClick(shirt)}>
             <div key={shirt.id}>
                 <div className="img-div">
                         <img   src={shirt.imageUrl1}   className="img" />
                 </div>
                 <h2 className="item-name">Name: {shirt.name}</h2>
-                <h3 className="item-price1">Price: {shirt.price} Rs.</h3>
+                <h3 className="item-price12">Price: {shirt.price} Rs.</h3>
                 <h4 className="item-quantity">Quantity: Only {shirt.quantity} Left</h4>
             </div>
         </div>

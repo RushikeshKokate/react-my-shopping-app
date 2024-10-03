@@ -1,11 +1,11 @@
 .nav{
     height: 50px;
     width: auto;
-    border: 2px solid transparent;
-    border-radius: 25px; 
-    margin: 20px;
+    border: 2px solid transparent; 
+    padding: 10px;
     position:  sticky;
     top: 0;
+    border-bottom: 1px solid #ccc;
     background-color: white;
     overflow-x: hidden;
     z-index: 1999;

@@ -12,13 +12,40 @@
     margin-bottom: 20px;
   }
   
+
+  .store_filter{
+    width: 75vw;
+    display: flex;
+    cursor: pointer;
+    margin: auto;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 10px;
+  }
+
+  .filter_icon{
+    border: 2px solid gray;
+    padding: 10px;
+    border-radius:5px ;
+  }
+
   .userName h2 {
     font-size: 2rem;
     color: #333;
     font-family: 'Arial', sans-serif;
     margin: 0;
   }
+  .categoryDropDown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    height: 30px;
+  }
   
+  .categoryDropDown select {
+    padding: 10px;
+  }
   .Cards-div {
     display: flex;
     flex-wrap: wrap;

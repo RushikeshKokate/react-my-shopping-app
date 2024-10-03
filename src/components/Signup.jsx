@@ -3,7 +3,7 @@ import { auth } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';  
 import './Signup.css'
-
+import { useEffect } from 'react';
 
 const Signup = () => {
     const [data, setData] = useState({
@@ -22,6 +22,10 @@ const Signup = () => {
             [name]: value
         });
     };
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    },[])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
