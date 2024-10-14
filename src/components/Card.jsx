@@ -28,7 +28,7 @@ const Card = ({ shirt , handleClick}) => {
         <div className="cardh1" onClick={()=>handleClick(shirt)}>
             <div key={shirt.id}>
                 <div className="img-div">
-                        <img   src={shirt.imageUrl1}   className="img" />
+                        <img   src={shirt.imageUrl1[0]}   className="img" />
                 </div>
                 <h2 className="item-name">Name: {shirt.name}</h2>
                 <h3 className="item-price12">Price: {shirt.price} Rs.</h3>

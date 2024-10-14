@@ -79,7 +79,7 @@ const Cart = ({user}) => {
     {Carts.length > 0 ? 
        (Carts.filter(items =>  items.name && items.quantity > 0 ).map
                 (item =>(<div key={item.id} className="card1">
-                    <div className='img-div1'><img src={item.imageUrl1} alt="" className='img2'/></div>
+                    <div className='img-div1'><img src={item.imageUrl1[0]} alt="" className='img2'/></div>
                     <div>
                     <h2 className="item-name2">Name: {item.name }</h2>
                     <h4 className="item-quantity4">Quantity: {item.quantity}</h4>

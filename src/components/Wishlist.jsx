@@ -19,7 +19,7 @@ const Wishlist = () => {
       <h2>Wishlist</h2>
       {WishlistItem.length > 0 ? ( WishlistItem.map((item) => (
         <div key={item.id} className="wishlist-item">
-          <img src={item.imageUrl1} alt={item.name} />
+          <img src={item.imageUrl1[0]} alt={item.name} />
           <div className="wishlist-item-details">
             <h3>{item.name}</h3>
             <p>{item.color}</p>

@@ -1,6 +1,6 @@
  
 .details {
-    height: 80vh;
+    height: auto;
     width: 90vw;
     display: flex;
     align-items: start;

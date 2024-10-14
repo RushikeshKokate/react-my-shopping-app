@@ -11,7 +11,6 @@
     text-align: center;
     margin-bottom: 20px;
   }
-  
 
   .store_filter{
     width: 75vw;
@@ -46,6 +45,9 @@
   .categoryDropDown select {
     padding: 10px;
   }
+  .price_filter_div{
+    margin-top: 10px;
+  }
   .Cards-div {
     display: flex;
     flex-wrap: wrap;
@@ -53,3 +55,24 @@
     gap: 20px;
     justify-content: center;
   }
+
+/* For mobile and tablet screens */
+@media screen and (max-width: 980px) {
+  .filter_div {
+    width: 75vw;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    gap:10px;
+  }
+  .search_div {
+    margin-right: auto; /* Hide the filter_div for larger screens */
+  }
+}
+
+/* For larger screens */
+@media screen and (min-width: 980px) {
+  .search_div {
+    display: none; /* Hide the filter_div for larger screens */
+  }
+}
