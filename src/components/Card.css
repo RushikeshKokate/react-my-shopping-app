@@ -96,3 +96,10 @@ button:hover {
 .add-button:hover {
     background-color: #d81b60;
 }
+
+@media (max-width: 768px) {
+    .cardh1 {
+        width: 100%; /* Full width on small devices */
+        max-width: none; /* Remove max-width restriction */
+    }
+}
